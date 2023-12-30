@@ -1,0 +1,417 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.logo3 img {
+    width: 60px;
+    margin-left: 30px;
+    transition: filter 0.3s ease-in-out;
+    
+}   
+
+.top-header {
+    background-color: #868686; /* Cor de fundo do pequeno cabeçalho */
+    padding: 1px;
+    height: 35px;
+    text-align: center; /* Centraliza o conteúdo */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+
+
+.header {       
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #e0e0e0; 
+ }
+
+
+.wishlist-icon img {
+        position: absolute;
+        width: 35px; /* Ajuste o tamanho conforme necessário */
+        right: 40px;
+        top: 62px;
+    }
+.profile-icon img {
+        position: absolute;
+        width: 30px;
+        right: 100px;
+        top: 65px;
+
+    }
+
+.header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1px 0;
+    }
+.buttons-section {
+        text-align:center;
+        padding: 10px;
+        width: 100%;
+        margin:0 auto;
+    }
+
+.buttons button {
+        color: black;
+        text-decoration: none;
+        font-size: 25px;
+        border: none;
+        background: none;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+        overflow: hidden;
+        outline: none; /* Adicione esta linha para remover a borda de foco */
+        margin-right: 55px;
+    }
+
+    .buttons button::before {
+        margin-left: auto;
+    }
+    
+    .buttons button::after,
+    .buttons button::before {
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: blueviolet;
+        display: block;
+        transition: 0.5s;
+    }
+    
+    .buttons button:hover::after,
+    .buttons button:hover::before {
+        width: 100%;
+        
+    }
+
+
+   
+    .container {
+        display: flex;
+        align-items: center; /* Centraliza verticalmente */
+        justify-content: center; /* Centraliza horizontalmente */
+        margin: 0; /* Remove margens padrão do body */
+      }
+    
+    .image-rectangle {
+        width: 900px; /* Largura do retângulo */
+        height: 590px; /* Altura do retângulo */
+        
+        overflow: hidden; /* Para esconder parte da imagem se ela for maior que o retângulo */
+        margin-top: 40px;
+        margin-left: 20 px; 
+        margin-right: 69px;
+        gap: 30px;
+        display: flex; /* Torna o container um flex container */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        background-color: rgb(241, 241, 241);
+
+      }
+      
+      .image-rectangle img {
+        width: 100%; /* Largura da imagem */
+        display: block; /* Remove espaços extras ao redor da imagem */
+        object-fit: cover; /* Ajusta a imagem para preencher o espaço mantendo a proporção */
+        
+
+      }
+    
+
+
+
+
+
+
+
+
+
+
+
+    .text-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 600px; /* Defina o tamanho máximo desejado */
+        flex: 1;    
+        
+      }
+    
+
+    
+    .button-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .button-list li {
+        margin: 5px;
+    }
+    
+   
+
+    .button-list2 {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    
+    .button-list2 li {
+        margin: 5px;
+    }
+    
+  
+
+    .button-list3 {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: -10px;
+    }
+    
+    .button-list3 li {
+        margin: 5px;
+    }
+  
+    
+    button {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .text-column .button-list button.active {
+        background-color: black;
+        color: white;
+    }
+    .text-column .button-list2 button.active {
+        background-color: black;
+        color: white;
+    }
+    .text-column .button-list3 button.active {
+        background-color: black;
+        color: white;
+    }
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .container-baixo {
+        display: flex;
+        align-items: center; /* Centraliza verticalmente */
+        justify-content: center; /* Centraliza horizontalmente */
+        margin: 0; /* Remove margens padrão do body */
+        margin-right: 668px;
+        
+    }
+    
+    .quadrado {
+        width: 445px; /* Largura do retângulo */
+        height: 300px; /* Altura do retângulo */
+        overflow: hidden; /* Para esconder parte da imagem se ela for maior que o retângulo */
+        
+        margin-left: 0px; 
+        margin-right: 50px;
+        display: flex; /* Torna o container um flex container */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        background-color: rgb(241, 241, 241);
+        margin: 5px;
+        margin-top: 8px;
+    }
+    .quadrado2 {
+        width: 445px; /* Largura do retângulo */
+        height: 300px; /* Altura do retângulo */
+        overflow: hidden; /* Para esconder parte da imagem se ela for maior que o retângulo */
+        
+        margin-left: 0px; 
+        margin-right: 50px;
+        display: flex; /* Torna o container um flex container */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        background-color: rgb(241, 241, 241);
+        margin: 5px;
+        margin-top: 8px;
+    }
+    
+    .quadrado img {
+        width: 80%; /* Ajuste para preencher o quadrado */
+        height: 75%; /* Ajuste para preencher o quadrado */
+        object-fit: cover; /* Mantém a proporção e corta a imagem se necessário */
+    }
+    .quadrado2 img {
+        width: 100%; /* Ajuste para preencher o quadrado */
+        height:100%; /* Ajuste para preencher o quadrado */
+        object-fit: cover; /* Mantém a proporção e corta a imagem se necessário */
+    }
+
+    .divider {
+        width: 1566px; /* Largura da linha como 80% */
+        margin: 50px auto; /* Espaçamento acima e abaixo da linha com 'auto' para centralizar */
+        border: none;
+        border-top: 1px solid #ccc;
+    }
+
+    .descricoes {
+    
+        width: 1566px; /* Largura da linha como 80% */
+        margin: 50px auto; /* Espaçamento acima e abaixo da linha com 'auto' para centralizar */
+        
+   
+    
+ }
+    
+    .texto {
+
+        max-width: 1566px; /* Define a largura máxima para o parágrafo */
+        margin-top: 40px; /* Ajuste de margem para espaçamento */
+    }
+
+
+
+
+
+
+
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-right: 10px; /* Espaçamento entre os botões */
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 120;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        padding: 10px;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        
+        
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .dropdown-content,
+    .dropdown-content:hover {
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    footer {
+        background-color: black;
+        color: white;
+        padding: 20px 0; /* Adapte o padding conforme necessário */
+    }
+    
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .left-section, .right-section {
+        flex: 1;
+    }
+    
+    .left-section p a {
+        color: white;
+        text-decoration: none;
+    }
+    .left-section p a:hover {
+        text-decoration: underline;
+    }
+    .right-section {
+        text-align: right;
+    }
+    
+    .right-section input[type="email"] {
+        width: 80%; /* Ajuste o tamanho conforme desejado */
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .right-section button {
+        padding: 11px 16px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }

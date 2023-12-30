@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StylesWishlist.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="top-header">
+        <span> COOLKICKS - BUY, TRADE AND SELL </span>
+    </div>
+
+    <div class="header">
+        <div class="header-content">
+            <div class="logo3">
+                <a href="index.html" class="logo3">
+                    <img src="images/logo3.png" alt="Logo"></a>
+            </div>
+            <div class="wishlist-icon">
+                <img src="images/wishlist.png" alt="Wishlist">
+            </div>
+            <div class="profile-icon">
+                <img src="images/profile.png" alt="Wishlist">
+            </div>
+            <div class="buttons-section">
+                <div class="buttons">
+                    <div class="dropdown">
+                        <button id="shoesBtn">SHOES</button>
+                        <div class="dropdown-content" id="shoesDropdown">
+                            <a href="nikemanshoes.html">Nike</a>
+                            <a href="apparel.html">Jordan</a>
+                            <a href="manpage.html">Adidas</a>
+                            <a href="#">Designers</a>
+                            <!-- Adicione mais itens conforme necessário -->
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button id="apparelBtn">APPAREL</button>
+                        <div class="dropdown-content" id="apparelDropdown">
+                            <a href="#">Shirts</a>
+                            <a href="#">Jackets</a>
+                            <a href="#">Hoodies</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button id="accessoriesBtn">ACCESSORIES</button>
+                        <div class="dropdown-content" id="apparelDropdown">
+                            <a href="#"> Bennies </a>
+                            <a href="#"> Hats </a>
+                            <a href="#"> Belts </a>
+                            <a href="#"> Others </a>
+                        </div>
+                    </div>
+                    <button>MAN</button>
+                    <button>WOMAN</button>
+                    <a href="https://shopcoolkicks.com" target="_blank">
+                        <button style="cursor: pointer;">MERCH</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>My Wishlist</h1> <br><br>
+
+
+    <div class="topicos">
+        <div class="item"> <b>PRODUCT NAME:</b></div>
+        <div class="item"><b>UNIT PRICE:</b></div>
+        <div class="item"><b>SIZE:</b></div>
+    </div>
+
+
+
+
+
+
+    <div id="wishlist-details">
+
+
+
+    </div>
+
+    <script>
+
+        const wishlist = localStorage.getItem('wishlist');
+        if (wishlist) {
+            const wishlistItems = JSON.parse(wishlist);
+            const wishlistDetailsContainer = document.getElementById('wishlist-details');
+
+            wishlistItems.forEach(item => {
+                const p = document.createElement('p');
+                p.textContent = `Name: ${item.name}, Price: ${item.price}, Size: ${item.size}`;
+                wishlistDetailsContainer.appendChild(p);
+            });
+        } else {
+            const noItemsMessage = document.createElement('p');
+            noItemsMessage.textContent = 'No items in wishlist.';
+            document.body.appendChild(noItemsMessage);
+        }
+    </script>
+
+
+
+    <script>
+
+        function renderWishlist() {
+            const wishlistDetailsContainer = document.getElementById('wishlist-details');
+            wishlistDetailsContainer.innerHTML = ''; // Limpa o conteúdo atual da wishlist
+
+            const wishlist = localStorage.getItem('wishlist');
+            if (wishlist) {
+                const wishlistItems = JSON.parse(wishlist);
+
+                wishlistItems.forEach((item, index) => {
+                    const itemContainer = document.createElement('div');
+                    itemContainer.classList.add('wishlist-item');
+
+                    const productDetailsContainer = document.createElement('div');
+                    productDetailsContainer.classList.add('product-details');
+
+                    const divider = document.createElement('hr');
+                    divider.classList.add('divider');
+                    wishlistDetailsContainer.appendChild(divider);
+
+                    const productName = document.createElement('a'); // Criando um link para o nome do produto
+                    productName.href = item.url; // Definindo o URL do link como o armazenado anteriormente
+                    productName.textContent = item.name;
+                    productName.classList.add('wishlist-item-name'); // Definindo o texto do link como o nome do produto
+                    itemContainer.appendChild(productName);
+
+                    const itemDetails = document.createElement('p');
+                    itemDetails.classList.add('wishlist-item-details');
+                    itemDetails.innerHTML = `<span class="wishlist-item-price">&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp${item.price}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp <span class="wishlist-item-size">${item.size} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp`;
+                    itemContainer.appendChild(itemDetails);
+
+
+
+
+                    const removeButton = document.createElement('button');
+                    removeButton.classList.add('remove-btn');
+                    removeButton.classList.add('custom-remove-btn'); // Adiciona uma classe para estilização posterior
+
+                    removeButton.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill="currentColor" d="M6.71 6.71a.996.996 0 0 0 0 1.41L11.59 12l-4.88 4.88a.996.996 0 1 0 1.41 1.41L13 13.41l4.88 4.88a.996.996 0 1 0 1.41-1.41L14.41 12l4.88-4.88a.996.996 0 1 0-1.41-1.41L13 10.59l-4.88-4.88a.996.996 0 0 0-1.41 0z"></path>
+                </svg>
+                <span>Remove</span>
+            `;
+
+                    removeButton.addEventListener('click', () => {
+                        wishlistItems.splice(index, 1);
+                        localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+                        renderWishlist();
+                    });
+                    
+                    itemContainer.appendChild(productDetailsContainer);
+                    itemContainer.appendChild(removeButton);
+                    wishlistDetailsContainer.appendChild(itemContainer);
+                });
+            } else {
+                const noItemsMessage = document.createElement('p');
+                noItemsMessage.textContent = 'No items in wishlist.';
+                wishlistDetailsContainer.appendChild(noItemsMessage);
+            }
+        }
+
+        // Chama a função renderWishlist() para exibir a lista de desejos quando a página for carregada
+        document.addEventListener('DOMContentLoaded', renderWishlist);
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+    <script src="js/scripts.js"></script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="left-section">
+                <h3>OUR SERVICES</h3>
+                <p><a href="">Terms of Service</a></p>
+                <p><a href="">Refund Policy</a></p>
+                <p><a href="">Privacy Policy</a></p>
+            </div>
+            <div class="right-section">
+                <div class="contact-us">
+                    <h3>CONTACT US</h3>
+                    <p>7565 Melrose Ave, Los Angeles, CA 90046</p>
+                    <p>7718 Melrose Ave, Los Angeles, CA 90046</p>
+                    <p>EMAIL: coolkicks@gmail.com</p>
+                </div>
+                <div class="newsletter">
+                    <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+</html>
